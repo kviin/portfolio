@@ -1,0 +1,337 @@
+/*
+  Couleurs
+  texte : #999
+  titres : #f62459
+  liens : rgb(246, 36, 89)
+  bordures : rgb(153,153,153)
+*/
+
+* {
+  box-sizing : border-box;
+}
+
+html {
+  font-size : 62.5%;
+  scroll-behavior : smooth;
+}
+
+body {
+  background-image: url(../img/fond.png);
+  font-family : "Bree Serif", Arial, sans-serif;
+  font-size : 1.8rem;
+  color : #999999;
+  line-height : 2;
+}
+
+
+
+/* ------------ header ------------*/
+
+nav a{
+  color : #999999;
+  display: block;
+  text-align: center;
+  font-size: 2rem;
+  text-decoration: none;
+  transition-property: color;
+  transition-duration: 2s;
+}
+nav a:hover{
+  color: #f62459;
+  text-decoration: none;
+  transform:translate(0,1rem);
+}
+a{
+  color:#f62459;
+  text-decoration: none;
+}
+#headlogo{
+  font-size: 4rem;
+  color:#999999;
+  text-decoration: none;
+}
+#headlogo:hover{
+  color:#f62459;
+  transition-property:color;
+  transition-duration:1s;
+}
+
+a:hover,a:focus,a:active {
+  text-decoration : underline;
+}
+
+/* ------------ CLASSES GENERIQUES ------------*/
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+h1::before{
+  content: "-";
+}
+h1 {
+  font-size: 4rem;
+}
+h1::after{
+  content: "-";
+}
+
+h2, h3 {
+	color: #f62459;
+}
+
+h2::before{
+  content: "-";
+}
+h2 {
+	font-size: 3.5rem;
+	text-align: center;
+}
+h2::after{
+  content: "-";
+}
+
+h3 {
+  font-size: 3rem;
+}
+
+img {
+  max-width : 100%;
+  height : auto;
+}
+#competences, #services{
+  text-align: center;
+}
+
+/* -------------- MAIN  ------------------*/
+
+.container {
+  max-width : 80%;
+  margin : 2rem auto;
+}
+
+.language {
+  text-align: center;
+}
+
+.service {
+  text-align: center;
+}
+.service i{
+  background-color: #eff0f2;
+  border: 2px solid grey;
+  padding: 3rem;
+  border-radius: 50%;
+}
+.service i:hover{
+  animation: bounce 0.35s ease infinite alternate;
+}
+@keyframes bounce{ from {transform: translateY(0);} to {transform: translateY(-20px);}}
+
+.logo{
+  margin-top: 5rem;
+  margin-right: 1rem;
+  width : 100px;
+  /* vertical-align: middle; */
+  float: left;
+}
+.logo:hover{
+  animation:heartbeat 1.5s ease-in-out infinite both;
+}
+@keyframes heartbeat{from{transform:scale(1);transform-origin:center center;animation-timing-function:ease-out}10%{transform:scale(.91);animation-timing-function:ease-in}17%{transform:scale(.98);animation-timing-function:ease-out}33%{transform:scale(.87);animation-timing-function:ease-in}45%{transform:scale(1);animation-timing-function:ease-out}}
+
+.language img:hover{
+  animation:rotate-in-center .6s cubic-bezier(.25,.46,.45,.94) both
+}
+@keyframes rotate-in-center{0%{transform:rotate(-360deg);opacity:0}100%{transform:rotate(0);opacity:1}}
+
+
+.banner i {
+  display : block;
+}
+article:nth-child(even) img{
+  float: right;
+}
+article:nth-child(odd) img{
+  float: left;
+}
+/* #orange, #plant{
+  float: right;
+}
+#temps, #flower{
+  float: left;
+} */
+
+.main-header {
+  background: url(../img/bg_header.png) no-repeat center;
+  background-attachment: fixed;
+  background-size: cover;
+  text-align: center;
+  color: white;
+  padding: 10rem 5rem;
+
+}
+
+.clear {
+  overflow : hidden;
+}
+
+.clear:after {
+	content:" ";
+	height:0;
+	line-height:0;
+	display:block;
+	visibility:hidden;
+	clear:both;
+}
+.cta{
+  display: inline-block;
+  border-radius: 5rem;
+  background-color: #f62459;
+  color: white;
+  padding: 1rem;
+  animation:wobble-hor-top 10s both infinite;
+}
+@keyframes wobble-hor-top{0%,100%{transform:translateX(0);transform-origin:50% 50%}15%{transform:translateX(-30px) rotate(6deg)}30%{transform:translateX(15px) rotate(-6deg)}45%{transform:translateX(-15px) rotate(3.6deg)}60%{transform:translateX(9px) rotate(-2.4deg)}75%{transform:translateX(-6px) rotate(1.2deg)}}
+/* ------------ form ------------*/
+
+fieldset{
+  border-radius: 5rem;
+  margin: 1rem;
+}
+
+.button{
+  text-align: center;
+}
+button{
+  display: inline-block;
+  border-radius: 5rem;
+  background-color: #f62459;
+  color: white;
+  padding: 1rem;
+}
+.field img{
+  float: left;
+  width: 5rem;
+  padding-right: 1rem;
+}
+input,textarea{
+  border: none;
+  background-color: inherit;
+}
+
+/* -------------- FOOTER ------------------*/
+
+footer {
+    display: block;
+    text-align: center;
+    padding: 25px;
+    color: #999999;
+    clear: both;
+
+}
+footer a {
+  text-decoration: none;
+  color: #f62459;
+}
+footer img {
+    width: 50px;
+}
+
+/* -------------- responsive ------------------*/
+
+        /* tel*/
+
+@media screen and ( max-width : 767px ) {
+  header{
+    text-align: center;
+  }
+  .banner a {
+    display : block;
+  }
+  #orange, #plant, #temps, #flower{
+    float: none;
+    width: 100%;
+  }
+  form{
+    text-align: center;
+  }
+  .logo{
+    float: none;
+  }
+}
+        /* tel - tablette */
+
+@media screen and ( max-width : 1023px ) {
+
+    .logo{
+      display : block;
+      margin : 0 auto;
+    }
+}
+
+        /* tablette */
+
+@media screen and ( min-width : 768px) and (max-width:1023px) {
+
+  header{
+    text-align: center;
+  }
+
+ .logo{
+   float:none;
+ }
+  nav a {
+    display : inline-block;
+    padding: 1rem;
+  }
+  #orange, #plant{
+    width: 30vh ;
+  }
+  #temps, #flower{
+    width: 30vh;
+  }
+  .contin{
+    display: inline-block;
+    width: 45.5%;
+  }
+}
+
+        /* desktop */
+
+@media screen and ( min-width : 1024px ) {
+
+  nav{
+    display: inline-block;
+    margin: 5rem 0;
+    margin-left: 18rem;
+  }
+  nav a{
+    color : #999999;
+    display: inline-block;
+    text-align: center;
+    padding: 2rem;
+    font-size: 2rem;
+    text-decoration: none;
+    transition-property: color;
+    transition-duration: 1s;
+  }
+
+  .language{
+    display: inline-block;
+    width: 26.66%;
+  }
+  .service{
+    display: inline-block;
+    width: 26.66%;
+  }
+  #orange, #plant{
+    width: 70vh ;
+  }
+  #temps, #flower{
+    width: 70vh;
+  }
+  .contin{
+    display: inline-block;
+    width: 48.5%;
+  }
+}
